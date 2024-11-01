@@ -12,6 +12,7 @@ export default function App() {
 
   function handleClickDarkButton() {
     console.log("click");
+    
   }
 
   
@@ -33,8 +34,6 @@ export default function App() {
       </div>
       <div className="thumb-bar">
         {imgs.map((img, index) => {
-          
-
           // console.log(img,index)
           return (
             <img onClick={()=>{
@@ -43,6 +42,7 @@ export default function App() {
 
             }} key={index} src={img.src} alt={img.alt} />
          );
+         //現在表示されている画像は選択できないように変更したいンゴねぇ
         })}
       </div>
     </>
