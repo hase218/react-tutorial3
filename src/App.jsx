@@ -10,9 +10,11 @@ export default function App() {
     {src: "images/pic5.jpg", alt: "Large moth on a leaf"}
   ]
 
-  function handleClickImg() {
+  function handleClickDarkButton() {
     console.log("click");
   }
+
+  
 
   return (
     <>
@@ -20,18 +22,26 @@ export default function App() {
       <div className="full-img">
       <img
         className="displayed-img"
-        src="images/pic1.jpg"
-        alt="Purple and white pansies"
+        src={url.src}
+        alt={url.alt}
       />
           
-     <div className="overlay"></div>
-        <button className="dark">Darken</button>
+     <div className="overlay">
+
+     </div>
+        <button onClick={handleClickDarkButton} className="dark">Darken</button>
       </div>
       <div className="thumb-bar">
         {imgs.map((img, index) => {
-          console.log(img,index)
+          
+
+          // console.log(img,index)
           return (
-            <img onClick={handleClickImg} key={index} src={img.src} alt={img.alt} />
+            <img onClick={()=>{
+              console.log("click", img);
+              setUrl(img);
+
+            }} key={index} src={img.src} alt={img.alt} />
          );
         })}
       </div>
